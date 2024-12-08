@@ -1,0 +1,25 @@
+.consultant-list {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .consultant-list h1 {
+    color: #333;
+  }
+  
+  .consultant-list ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .consultant-list li {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+  }
+  
+  .consultant-list li h2 {
+    margin: 0;
+  }
+  
