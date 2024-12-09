@@ -1,33 +1,38 @@
 import React, { useState } from 'react';
-import consultants from '../data/consultants';
 import './ConsultantList.css';
+import consultants from '../data/consultants.js';
 
-const ConsultantList = () => {
-    const [searchTerm, setSearchTerm] = useState("");
+function ConsultantList({ onSelectConsultant }) {
+  const [searchTerm, setSearchTerm] = useState('');
 
-  const filteredConsultants = consultants.filter(consultant =>
+  const filteredConsultants = consultants.filter((consultant) =>
     consultant.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   return (
-    <div className="consultant-list">
-      <h1>Konsulttilista</h1>
+    <div>
+      <h1>Konsultti Lista</h1>
       <input
         type="text"
-        placeholder="Hae nimellä..."
+        placeholder="Etsi profiilia..."
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
       />
+      {filteredConsultants.length === 0 ? (
+        <p>Profiilia ei löytynyt</p>
+      ) : (
       <ul>
-        {filteredConsultants.map(consultant => (
+      {filteredConsultants.map((consultant) => (
           <li key={consultant.id}>
-            <h2>{consultant.name}</h2>
-            <p>{consultant.technologies.join(", ")}</p>
+            <button onClick={() => onSelectConsultant(consultant)}>
+              {consultant.name}
+            </button>
           </li>
         ))}
       </ul>
+      )}
     </div>
   );
-};
+}
 
 export default ConsultantList;

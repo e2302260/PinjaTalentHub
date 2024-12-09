@@ -4,7 +4,7 @@
   }
   
   .consultant-list h1 {
-    color: #333;
+    color: #000000;
   }
   
   .consultant-list ul {
@@ -13,7 +13,7 @@
   }
   
   .consultant-list li {
-    border: 1px solid #ddd;
+    border: 1px solid #000000;
     padding: 10px;
     margin-bottom: 10px;
     border-radius: 5px;

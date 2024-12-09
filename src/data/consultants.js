@@ -1,23 +1,8 @@
 import React from 'react';
 
 const consultants = [
-    {
-      id: 1,
-      name: "Matti Meikäläinen",
-      technologies: ["React", "Node.js", "mySQL"],
-      experienceYears: 5,
-      education: "Tietojenkäsittelytieteen maisteri",
-      certifications: ["AWS-sertifioitu kehittäjä"],
-    },
-    {
-      id: 2,
-      name: "Ville Virtanen",
-      technologies: ["Python", "Django", "mySQL"],
-      experienceYears: 8,
-      education: "Ohjelmistotekniikan kandidaatti",
-      certifications: ["Azure-ratkaisuarkkitehti"],
-    },
-  ];
-  
-  export default consultants;
-  
+  { id: 1, name: 'Matti Meikäläinen', education: 'Tradenomi (AMK), Tietojenkäsittely', experience: '5 vuotta', skills: ['React', 'Node.js'] },
+  { id: 2, name: 'Ville Virtanen', education: 'Tietojenkäsittelytiede, maisteri', experience: '3 vuotta', skills: ['Python', 'Django'] },
+];
+
+export default consultants;
