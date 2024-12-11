@@ -6,12 +6,11 @@ function ConsultantList({ onSelectConsultant }) {
   const [searchTerm, setSearchTerm] = useState('');
 
   const filteredConsultants = consultants.filter((consultant) =>
-    consultant.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    consultant.education.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    consultant.graduationyear.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    consultant.experience.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    consultant.skills.some(skill => skill.toLowerCase().includes(searchTerm.toLowerCase())) ||
-    consultant.certifications.some(skill => skill.toLowerCase().includes(searchTerm.toLowerCase()))
+    (consultant.name && consultant.name.toLowerCase().includes(searchTerm.toLowerCase())) ||
+    (consultant.education && consultant.education.toLowerCase().includes(searchTerm.toLowerCase())) ||
+    (consultant.experience && consultant.experience.toLowerCase().includes(searchTerm.toLowerCase())) ||
+    (consultant.skills && consultant.skills.some(skill => skill.toLowerCase().includes(searchTerm.toLowerCase()))) ||
+    (consultant.certifications && consultant.certifications.some(cert => cert.toLowerCase().includes(searchTerm.toLowerCase())))
   );
 
   return (
