@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import ConsultantList from './components/ConsultantList';
-import ConsultantProfile from './pages/ConsultantProfile';
+import ConsultantProfile from './components/ConsultantProfile';
 
 function App() {
 
