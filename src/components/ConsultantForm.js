@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './ConsultantForm.css';
-import './ConsultantProfile.js';
+import'./ConsultantProfile.js';
 
 function ConsultantForm({ onCreate, onBack }) {
   const [newConsultant, setNewConsultant] = useState({

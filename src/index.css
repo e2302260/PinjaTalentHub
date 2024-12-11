@@ -1,11 +1,82 @@
+/* Yleinen tyylittely */
 body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #fef6f9; /* Vaalean pinkki tausta */
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
-  background-color: #f9f9f9;
+  color: #333;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  margin: 0;
-  padding: 0;
+h1 {
+  text-align: center;
+  color: #e91e63; /* Kirkas pinkki */
+  font-size: 26px;
+  margin-bottom: 20px;
+}
+
+/* Kontaineri */
+.container {
+  max-width: 600px;
+  margin: 30px auto;
+  background: #ffffff; /* Valkoinen tausta */
+  padding: 20px 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Input-kentät */
+input[type="text"],
+input[type="number"] {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 2px solid #e91e63; /* Pinkki reuna */
+  border-radius: 8px;
+  background-color: #fef6f9;
+  font-size: 16px;
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+  border-color: #c2185b; /* Tummempi pinkki fokus */
+  outline: none;
+  box-shadow: 0 0 8px rgba(233, 30, 99, 0.5); /* Pinkki hohde */
+}
+
+/* Napit */
+button {
+  background-color: #e91e63; /* Kirkas pinkki */
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 20px;
+  margin: 10px 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+  background-color: #c2185b; /* Tummempi pinkki hover */
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+button:active {
+  background-color: #880e4f; /* Vielä tummempi pinkki klikattuna */
+  box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Media Query: mobiililaitteille */
+@media (max-width: 600px) {
+  .container {
+    padding: 15px;
+  }
+
+  button {
+    width: 100%;
+    margin: 10px 0;
+  }
 }
