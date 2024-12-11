@@ -50,7 +50,7 @@ function ConsultantList() {
         <ConsultantForm onCreate={handleCreate} />
       ) : (
         <div>
-          <h1>Konsultti Lista</h1>
+          <h1>PinjaTalentHub</h1>
           <input
             type="text"
             placeholder="Etsi profiilia..."
