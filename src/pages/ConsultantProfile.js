@@ -7,8 +7,10 @@ function ConsultantProfile({ consultant, onBack }) {
       <h1>Profiili:</h1>
       <p><strong>Nimi:</strong> {consultant.name}</p>
       <p><strong>Koulutus:</strong> {consultant.education}</p>
+      <p><strong>Valmistumisvuosi:</strong> {consultant.graduationyear}</p>
       <p><strong>Kokemus:</strong> {consultant.experience}</p>
       <p><strong>Taidot:</strong> {consultant.skills.join(', ')}</p>
+      <p><strong>Sertifikaatiot:</strong> {consultant.certifications.join(', ')}</p>
       <button onClick={onBack}>Takaisin listaan</button>
     </div>
   );
