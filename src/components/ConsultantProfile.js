@@ -4,7 +4,7 @@ import './ConsultantProfile.css';
 
 function ConsultantProfile({ consultant, onBack, onSave }) {
   
-  const generatePDF = () => {
+   const generatePDF = () => {
     const doc = new jsPDF();
     doc.setFont('helvetica', 'normal', 12); 
 
@@ -12,8 +12,8 @@ function ConsultantProfile({ consultant, onBack, onSave }) {
     doc.text(`Koulutus: ${consultant.education}`, 10, 20);
     doc.text(`Valmistumisvuosi: ${consultant.graduationyear}`, 10, 30);
     doc.text(`Kokemus: ${consultant.experience}`, 10, 40);
-    doc.text(`Taidot: ${consultant.skills.join(', ')}`, 10, 50);
-    doc.text(`Sertifikaatiot: ${consultant.certifications.join(', ')}`, 10, 60);
+    doc.text(`Taidot: ${consultant.skills}`, 10, 50);
+    doc.text(`Sertifikaatiot: ${consultant.certifications}`, 10, 60);
 
     doc.save(`${consultant.name}_CV.pdf`);
   };

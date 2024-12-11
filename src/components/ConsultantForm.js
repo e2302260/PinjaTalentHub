@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
 import './ConsultantForm.css';
+import './ConsultantProfile.js';
 
-function ConsultantForm({ onCreate }) {
+function ConsultantForm({ onCreate, onBack }) {
   const [newConsultant, setNewConsultant] = useState({
     name: '',
     education: '',
     graduationyear: '',
     experience: '',
     skills: '',
-    certifications: ''
+    certifications: '',
   });
 
   const handleChange = (e) => {
@@ -23,9 +24,9 @@ function ConsultantForm({ onCreate }) {
     e.preventDefault();
     const consultant = {
       ...newConsultant,
-      skills: newConsultant.skills.split(','),
-      certifications: newConsultant.certifications.split(','),
-      id: Date.now(),
+      skills: newConsultant.skills ? newConsultant.skills.split(',').map(skill => skill.trim()) : [],
+      certifications: newConsultant.certifications ? newConsultant.certifications.split(',').map(cert => cert.trim()) : [],
+      id: Date.now(), 
     };
     onCreate(consultant);
   };
@@ -51,15 +52,16 @@ function ConsultantForm({ onCreate }) {
           <input type="text" name="experience" value={newConsultant.experience} onChange={handleChange} />
         </label>
         <label>
-          Taidot (pilkuilla eroteltuna):
+          Taidot:
           <input type="text" name="skills" value={newConsultant.skills} onChange={handleChange} />
         </label>
         <label>
-          Sertifikaatit (pilkuilla eroteltuna):
+          Sertifikaatit:
           <input type="text" name="certifications" value={newConsultant.certifications} onChange={handleChange} />
         </label>
         <button type="submit">Tallenna</button>
       </form>
+      <button onClick={onBack}>Takaisin listaan</button>
     </div>
   );
 }

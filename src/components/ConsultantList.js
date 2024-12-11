@@ -36,6 +36,7 @@ function ConsultantList() {
 
   const handleBack = () => {
     setSelectedConsultant(null);
+    setIsCreating(false);
   };
 
   return (
@@ -47,7 +48,10 @@ function ConsultantList() {
           onSave={handleSave}
         />
       ) : isCreating ? (
-        <ConsultantForm onCreate={handleCreate} />
+        <ConsultantForm 
+        onCreate={handleCreate}
+        onBack={handleBack} 
+        />
       ) : (
         <div>
           <h1>PinjaTalentHub</h1>
@@ -71,8 +75,8 @@ function ConsultantList() {
                     <p><strong>Koulutus:</strong> {consultant.education}</p>
                     <p><strong>Valmistumisvuosi:</strong> {consultant.graduationyear}</p>
                     <p><strong>Kokemus:</strong> {consultant.experience}</p>
-                    <p><strong>Taidot:</strong> {consultant.skills.join(', ')}</p>
-                    <p><strong>Sertifikaatiot:</strong> {consultant.certifications.join(', ')}</p>
+                    <p><strong>Taidot:</strong> {Array.isArray(consultant.skills) ? consultant.skills.join(', ') : consultant.skills}</p>
+                    <p><strong>Sertifikaatiot:</strong> {Array.isArray(consultant.certifications) ? consultant.certifications.join(', ') : consultant.certifications}</p>
                   </div>
                 </li>
               ))}
